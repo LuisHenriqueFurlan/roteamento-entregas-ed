@@ -30,6 +30,8 @@ O sistema permite:
 - registrar entregas no histórico
 - consultar histórico de entregas realizadas
 - visualizar o status dos entregadores
+- interface via terminal
+- interface gráfica com Tkinter
 
 ---
 
@@ -60,17 +62,18 @@ Toda vez que uma entrega é finalizada, o pedido correspondente é empilhado no 
 
 ---
 
-## Organização do Projeto
+## Interface Gráfica (Tkinter)
 
-O projeto está organizado nos seguintes arquivos:
+O projeto também possui uma interface gráfica desenvolvida com a biblioteca **Tkinter**, permitindo uma interação mais visual com o sistema.
 
-- `main.py` → menu interativo e entrada de dados do usuário
-- `models.py` → classes `Pedido` e `Entregador`
-- `estruturas.py` → classes `Fila` e `Pilha`
-- `sistema_entregas.py` → lógica principal do sistema
+Por meio da interface é possível:
 
----
+- cadastrar pedidos
+- atribuir entregas
+- finalizar entregas
+- visualizar pedidos, entregadores e histórico
 
+<<<<<<< HEAD
 ## Fluxo do Sistema
 
 O funcionamento do sistema ocorre da seguinte forma:
@@ -102,3 +105,5 @@ O funcionamento do sistema ocorre da seguinte forma:
 
 ```bash
 git clone https://github.com/LuisHenriqueFurlan/roteamento-entregas-ed
+=======
+>>>>>>> 2d0090d (docs: atualiza README com interface gráfica)

@@ -101,4 +101,4 @@ O funcionamento do sistema ocorre da seguinte forma:
 ### 1. Clone o repositório
 
 ```bash
-git clone <https://github.com/LuisHenriqueFurlan/roteamento-entregas-ed>
+git clone https://github.com/LuisHenriqueFurlan/roteamento-entregas-ed

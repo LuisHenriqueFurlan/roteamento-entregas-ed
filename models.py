@@ -27,19 +27,21 @@ class Entregador:
         self.pedido_atual = None
 
     def atribuir_pedido(self, pedido):
-        if self.disponivel:
-            self.pedido_atual = pedido
-            self.disponivel = False
-            return True
-        return False
+        if not self.disponivel:
+            return False
+
+        self.pedido_atual = pedido
+        self.disponivel = False
+        return True
 
     def finalizar_entrega(self):
-        if self.pedido_atual is not None:
-            pedido_finalizado = self.pedido_atual
-            self.pedido_atual = None
-            self.disponivel = True
-            return pedido_finalizado
-        return None
+        if self.pedido_atual is None:
+            return None
+
+        pedido_finalizado = self.pedido_atual
+        self.pedido_atual = None
+        self.disponivel = True
+        return pedido_finalizado
 
     def __str__(self):
         status = "Disponível" if self.disponivel else "Ocupado"

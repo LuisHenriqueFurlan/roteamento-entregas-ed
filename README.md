@@ -1,27 +1,104 @@
 # Sistema de Roteamento de Entregas com Pilha e Fila
 
-## Descrição
-Projeto desenvolvido para a disciplina de Estrutura de Dados com o objetivo de simular um sistema de roteamento de entregas urbanas nas cidades de Cuiabá e Várzea Grande.
+## Descrição do Projeto
+
+Este projeto foi desenvolvido para a disciplina de Estrutura de Dados com o objetivo de simular um sistema de roteamento de entregas urbanas nas cidades de Cuiabá e Várzea Grande (MT).
+
+O sistema recebe pedidos de entrega, organiza os pedidos pendentes utilizando filas e registra as entregas concluídas em uma pilha, permitindo o controle de entregadores, pedidos prioritários e histórico de entregas.
+
+---
 
 ## Objetivo
-Aplicar os conceitos de fila (FIFO) e pilha (LIFO) em um sistema funcional de gerenciamento de pedidos e entregadores.
 
-## Funcionalidades atuais
-- Cadastro de pedidos
-- Separação entre pedidos normais e prioritários
-- Controle de 3 entregadores fixos
-- Atribuição de pedidos
-- Finalização de entregas
-- Histórico de entregas com pilha
-- Menu interativo no terminal
+Aplicar, na prática, os conceitos de Estrutura de Dados, com foco nas estruturas:
 
-## Tecnologias utilizadas
+- **Fila (FIFO)** para o controle de pedidos pendentes
+- **Pilha (LIFO)** para o histórico de entregas realizadas
+
+Além disso, o projeto busca simular o funcionamento básico de uma empresa de entregas com três entregadores fixos.
+
+---
+
+## Funcionalidades
+
+O sistema permite:
+
+- inserir novos pedidos
+- listar pedidos pendentes
+- atribuir pedidos aos entregadores disponíveis
+- finalizar entregas
+- registrar entregas no histórico
+- consultar histórico de entregas realizadas
+- visualizar o status dos entregadores
+
+---
+
+## Estruturas de Dados Utilizadas
+
+### Fila (FIFO)
+
+A fila foi utilizada para armazenar os pedidos pendentes.
+
+Foram implementadas duas filas:
+
+- **fila de prioridade**
+- **fila normal**
+
+A lógica utilizada foi:
+
+- pedidos de prioridade **alta** entram na fila de prioridade
+- pedidos de prioridade **normal** entram na fila normal
+- no momento da atribuição, a fila de prioridade é atendida primeiro
+
+Assim, a ordem de chegada é mantida dentro de cada fila.
+
+### Pilha (LIFO)
+
+A pilha foi utilizada para armazenar o histórico de entregas concluídas.
+
+Toda vez que uma entrega é finalizada, o pedido correspondente é empilhado no histórico. Dessa forma, a entrega mais recente aparece primeiro na consulta do histórico.
+
+---
+
+## Organização do Projeto
+
+O projeto está organizado nos seguintes arquivos:
+
+- `main.py` → menu interativo e entrada de dados do usuário
+- `models.py` → classes `Pedido` e `Entregador`
+- `estruturas.py` → classes `Fila` e `Pilha`
+- `sistema_entregas.py` → lógica principal do sistema
+
+---
+
+## Fluxo do Sistema
+
+O funcionamento do sistema ocorre da seguinte forma:
+
+1. o usuário escolhe uma opção no menu
+2. ao cadastrar um pedido, o sistema cria um objeto `Pedido`
+3. o pedido é enviado para a fila correta:
+   - fila de prioridade
+   - fila normal
+4. quando a opção de atribuição é executada, os entregadores disponíveis recebem pedidos
+5. pedidos prioritários são atendidos antes dos pedidos normais
+6. ao finalizar uma entrega, o pedido é removido do entregador
+7. o pedido finalizado é armazenado na pilha de histórico
+8. o usuário pode consultar o histórico e o status dos entregadores a qualquer momento
+
+---
+
+## Tecnologias Utilizadas
+
 - Python 3
+- Programação Orientada a Objetos
+- Estruturas de Dados: Fila e Pilha
 
-## Estruturas de dados utilizadas
-- Fila: para pedidos pendentes
-- Pilha: para histórico de entregas
+---
 
-## Como executar
+## Como Executar
+
+### 1. Clone o repositório
+
 ```bash
-python main.py
+git clone <https://github.com/LuisHenriqueFurlan/roteamento-entregas-ed>

@@ -1,5 +1,5 @@
 from models import Pedido
-from sistema_entregas import SistemaEntregas
+from SistemaEntregas import SistemaEntregas
 
 
 def mostrar_menu():

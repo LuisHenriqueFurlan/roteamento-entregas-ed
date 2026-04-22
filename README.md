@@ -103,7 +103,13 @@ O funcionamento do sistema ocorre da seguinte forma:
 
 ### 1. Clone o repositório
 
-```bash
 git clone https://github.com/LuisHenriqueFurlan/roteamento-entregas-ed
-=======
->>>>>>> 2d0090d (docs: atualiza README com interface gráfica)
+
+### 2. rodar a interface grafica
+-python app_tkinter.py
+
+### 3. rodar somente no terminal 
+-python main.py
+
+
+
